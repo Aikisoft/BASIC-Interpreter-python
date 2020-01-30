@@ -23,6 +23,7 @@ class Calc:
 		exp1 = self.__parse_Primary__(expr)
 
 		try:
+			
 			while (expr[0] == "+"):
 				del[expr[0]]
 				exp2 = self.__parse_Primary__(expr)
@@ -84,16 +85,24 @@ class Calc:
 			return exp
 
 		elif (expr[0] == "\n"):	
-				print "new line"	
+				print ("new line")
+
+  		
+			
 
 	def parse_Num(self, expr):
 
+
 		num = 0
 		numLen = len(expr)
+		for i in expr:
+			if(i == " "):
+				expr.remove(i)
 		toknum = ""
 		i = 0
 		
 		while i < numLen:
+
 
 			if (expr[0].isdigit() == False):
 				return num	
